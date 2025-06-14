@@ -80,6 +80,9 @@ main > section.hero {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   /* make this banner stick to the top! */
 }
 
@@ -101,6 +104,14 @@ section.hero > button {
 
 main article {
   padding: 48px 96px;
+}
+
+article p:first-of-type:first-letter{
+  font-size: 80px;
+  float: inline-start;
+  padding: 0 15px;
+  line-height: 70px;
+  font-family: serif;
 }
 
 main p {
@@ -125,12 +136,15 @@ footer {
   color: var(--off-white);
 }
 
-/* tooltip code below */
+/* tooltip code below > Finish the tooltip code in the CSS file so that when hovering over or focusing the red text
+causes the text within the inner span tag to appear above as a word bubble. Again, refer to
+the gif at the top of these instructions for a visual example.*/
 
 span.tooltip {
   color: var(--danger-color);
   position: relative;
   cursor: pointer;
+  z-index: 
 }
 
 /* underline span on hover/focus */
@@ -147,9 +161,28 @@ span.tooltip:focus > span {
 /* styling for tooltip bubble */
 span.tooltip span {
   display: none;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  font-size: small;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
 }
 
 /* styling for tooltip bubble arrow */
 span.tooltip span::after {
   content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
+
